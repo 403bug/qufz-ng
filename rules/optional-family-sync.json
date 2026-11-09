@@ -1,0 +1,43 @@
+{
+  "apps": {
+    "com.coloros.securityguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "k1.d",
+          "optional": true,
+          "methods": [
+            {
+              "name": "b",
+              "note": "FamilyGuardUtil: insert security event into com.oplus.familyguard provider"
+            },
+            {
+              "name": "d",
+              "note": "FamilyGuardUtil: handle security event callback"
+            },
+            {
+              "name": "f",
+              "note": "FamilyGuardUtil: update security event in family provider"
+            }
+          ]
+        }
+      ]
+    },
+    "com.coloros.familyguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.coloros.familyguard.member.securityevent.manager.SecurityEventManager",
+          "optional": true,
+          "methods": [
+            {
+              "name": "e",
+              "params": [],
+              "note": "launches uploadSecurityEvent coroutine; SecurityEventApi posts to /core/security/v1/client/upload"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

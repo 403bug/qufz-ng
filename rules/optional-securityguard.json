@@ -1,0 +1,18 @@
+{
+  "apps": {
+    "com.coloros.securityguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "k1.d",
+          "optional": true,
+          "methods": [
+            { "name": "b", "note": "FamilyGuardUtil: insert security event into com.oplus.familyguard provider" },
+            { "name": "d", "note": "FamilyGuardUtil: handle security event callback" },
+            { "name": "f", "note": "FamilyGuardUtil: update security event in family provider" }
+          ]
+        }
+      ]
+    }
+  }
+}

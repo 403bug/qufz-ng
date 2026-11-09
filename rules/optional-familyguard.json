@@ -1,0 +1,16 @@
+{
+  "apps": {
+    "com.coloros.familyguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.coloros.familyguard.member.securityevent.manager.SecurityEventManager",
+          "optional": true,
+          "methods": [
+            { "name": "e", "params": [], "note": "launches uploadSecurityEvent coroutine; SecurityEventApi posts to /core/security/v1/client/upload" }
+          ]
+        }
+      ]
+    }
+  }
+}

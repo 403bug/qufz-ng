@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "note": "ATB rule file. Add any app under apps.<package>. params are Java type names; omit params to match every overload with that name.",
+  "apps": {
+    "com.coloros.phonemanager": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.oplus.phonemanager.aivoicecalldetect.utils.AiVoiceDetectDCSUtils",
+          "optional": true,
+          "methods": [
+            {
+              "name": "d",
+              "params": [
+                "java.lang.String"
+              ],
+              "note": "16.10.4 updateDetectInfo -> uploadDetectInfo coroutine"
+            },
+            {
+              "name": "e",
+              "params": [
+                "android.content.Context"
+              ],
+              "note": "16.10.4 uploadSwitches"
+            },
+            {
+              "name": "m",
+              "note": "17.1.6 uploadDetectInfo"
+            },
+            {
+              "name": "n",
+              "params": [
+                "android.content.Context"
+              ],
+              "note": "17.1.6 uploadSwitches"
+            },
+            {
+              "name": "uploadDetectInfo",
+              "note": "17.3.10+ uploadDetectInfo"
+            },
+            {
+              "name": "uploadDetectInfo$default",
+              "note": "17.3.10+ Kotlin default bridge"
+            },
+            {
+              "name": "uploadSwitches",
+              "params": [
+                "android.content.Context"
+              ],
+              "note": "17.3.10+ uploadSwitches"
+            }
+          ]
+        },
+        {
+          "class": "com.oplus.phonemanager.aivoicecalldetect.utils.AiDetectStatistics",
+          "staticVoid": true,
+          "optional": true,
+          "exclude": [],
+          "note": "17.1.6 / 17.5.4 telemetry facade; absent on 16.10.4"
+        }
+      ],
+      "sinks": [
+        {
+          "class": "com.oplus.nearx.track.TrackApi",
+          "optional": true,
+          "methods": [
+            {
+              "name": "E",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "java.util.Map"
+              ],
+              "note": "17.1.6 sink"
+            },
+            {
+              "name": "M",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "java.util.Map"
+              ],
+              "note": "16.10.4 main sink"
+            },
+            {
+              "name": "N",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "org.json.JSONObject"
+              ]
+            },
+            {
+              "name": "L",
+              "params": [
+                "java.lang.String",
+                "java.lang.String"
+              ]
+            },
+            {
+              "name": "O",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "org.json.JSONObject",
+                "com.oplus.nearx.track.TrackApi$d"
+              ]
+            },
+            {
+              "name": "track",
+              "note": "17.3.10+ sink; inherited variants found via superclass search"
+            }
+          ],
+          "appIdIndex": 0,
+          "eventIndex": 1,
+          "appIds": [
+            "20092"
+          ],
+          "eventPrefixes": [
+            "anti_fraud",
+            "ai_detect",
+            "ai_fraud",
+            "fraud"
+          ],
+          "eventExact": [
+            "anti_fraud_switches",
+            "anti_fraud_events_count",
+            "anti_fraud_master_switche",
+            "anti_fraud_handle_event",
+            "anti_fraud_false_report_event",
+            "ai_detect_result_event",
+            "ai_detect_switch_event",
+            "ai_detect_voip_app_outside_lists"
+          ]
+        }
+      ]
+    },
+    "com.coloros.securityguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "k1.d",
+          "optional": true,
+          "methods": [
+            {
+              "name": "b",
+              "note": "FamilyGuardUtil insert security event"
+            },
+            {
+              "name": "d",
+              "note": "FamilyGuardUtil handle callback"
+            },
+            {
+              "name": "f",
+              "note": "FamilyGuardUtil update security event"
+            }
+          ]
+        }
+      ]
+    },
+    "com.coloros.familyguard": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.coloros.familyguard.member.securityevent.manager.SecurityEventManager",
+          "optional": true,
+          "methods": [
+            {
+              "name": "e",
+              "params": [],
+              "note": "launches uploadSecurityEvent coroutine"
+            }
+          ]
+        }
+      ]
+    },
+    "com.oplus.statistics.rom": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.oplus.statistics.rom.service.UploadJobService",
+          "optional": true,
+          "methods": [
+            {
+              "name": "onStartJob",
+              "params": [
+                "android.app.job.JobParameters"
+              ],
+              "returnValue": false
+            },
+            {
+              "name": "onStartCommand",
+              "params": [
+                "android.content.Intent",
+                "int",
+                "int"
+              ],
+              "returnValue": 2
+            },
+            {
+              "name": "b",
+              "params": [
+                "android.content.Context",
+                "android.content.ComponentName",
+                "long"
+              ]
+            },
+            {
+              "name": "c",
+              "params": [
+                "android.content.Context",
+                "long"
+              ]
+            },
+            {
+              "name": "f",
+              "params": [
+                "android.content.Context",
+                "android.content.ComponentName",
+                "long"
+              ]
+            },
+            {
+              "name": "g",
+              "params": [
+                "android.content.Context",
+                "long"
+              ]
+            }
+          ]
+        },
+        {
+          "class": "com.oplus.statistics.rom.service.FileUploadService",
+          "optional": true,
+          "methods": [
+            {
+              "name": "onStartCommand",
+              "params": [
+                "android.content.Intent",
+                "int",
+                "int"
+              ],
+              "returnValue": 2
+            }
+          ]
+        }
+      ]
+    },
+    "com.heytap.browser": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "xt2.d",
+          "optional": true,
+          "methods": [
+            {
+              "name": "d",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "com.heytap.browser.api.webpage.util.AntiFraudReportType"
+              ]
+            },
+            {
+              "name": "r",
+              "params": [
+                "java.lang.String",
+                "java.lang.String",
+                "com.heytap.browser.api.webpage.util.AntiFraudReportType"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

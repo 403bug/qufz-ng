@@ -1,0 +1,10 @@
+id=atb
+name=AntiTelemetryBlock
+version=1.3
+versionCode=4
+author=eta
+description=Rule-driven telemetry blocker. Defaults to ColorOS PhoneManager anti-fraud uploads; add other apps via /data/local/tmp/atb-rules.json
+minApiVersion=101
+targetApiVersion=102
+staticScope=false
+autoHotReload=false

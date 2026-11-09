@@ -1,0 +1,33 @@
+{
+  "apps": {
+    "com.example.app": {
+      "enabled": true,
+      "silence": [
+        {
+          "class": "com.example.app.telemetry.Uploader",
+          "methods": [
+            { "name": "upload", "params": ["java.lang.String", "java.util.Map"] }
+          ]
+        },
+        {
+          "class": "com.example.app.telemetry.Stats",
+          "staticVoid": true,
+          "exclude": ["<clinit>", "<init>"]
+        }
+      ],
+      "sinks": [
+        {
+          "class": "com.example.app.track.Tracker",
+          "methods": [
+            { "name": "send", "params": ["java.lang.String", "java.lang.String", "java.util.Map"] }
+          ],
+          "appIdIndex": 0,
+          "eventIndex": 1,
+          "appIds": ["12345"],
+          "eventPrefixes": ["ad_", "track_"],
+          "eventExact": []
+        }
+      ]
+    }
+  }
+}
