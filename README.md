@@ -261,6 +261,8 @@ python3 tools/verify_rules.py /path/to/FamilyGuard.apk rules/optional-familyguar
 
 首次构建会生成 `build/atb-debug.jks`（口令 `android`），仅用于本地安装；正式分发请换自己的密钥（`ATB_KS`）。UI 的 remote preferences 依赖 `libs/service-102.0.0.aar` 和 `libs/interface-102.0.0.aar`，它们会被编译进模块 APK，不是额外 App。
 
+自行构建会生成新的本地密钥，与 Release APK 的签名不同，不能直接覆盖安装；需要覆盖安装时请固定使用同一份 `ATB_KS`。
+
 ## 实测记录
 
 <details>
